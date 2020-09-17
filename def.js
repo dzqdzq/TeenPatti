@@ -1,0 +1,46 @@
+let Def = {};
+Def.Poker = [
+  0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, // 方块 A - K
+  0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, // 梅花 A - K
+  0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29, 0x2A, 0x2B, 0x2C, 0x2D, // 红桃 A - K
+  0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x3A, 0x3B, 0x3C, 0x3D // 黑桃 A - K
+];
+
+// 扑克类型
+Def.CT_SINGLE = 1; // 单牌类型
+Def.CT_DOUBLE = 2; // 对子类型 对子
+Def.CT_JIN_HUA = 3; // 金花类型 同花
+Def.CT_SHUN_ZI = 4; // 顺子类型 顺子
+Def.CT_SHUN_JIN = 5; // 顺金类型 同花顺
+Def.CT_BAO_ZI = 6; // 豹子类型 三条
+
+Def.LOGIC_MASK_COLOR = 0xF0; // 花色掩码
+Def.LOGIC_MASK_VALUE = 0x0F; // 数值掩码
+
+Def.RUN = {
+  '234': 1,
+  '345': 2,
+  '456': 3,
+  '567': 4,
+  '678': 5,
+  '789': 6,
+  '89T': 7,
+  '9TJ': 8,
+  'TJQ': 9,
+  'JQK': 10,
+  '23A': 11,
+  'QKA': 12
+};
+
+Def.SuitArrString = '♦️♣️♥️♠️';
+Def.SuitMapString = {
+  0:'♦️',
+  0x10:'♣️',
+  0x20:'♥️',
+  0x30:'♠️',
+};
+
+Def.CardTypeString = ['未知', '单牌', '对子', '同花', '顺子', '同花顺', '豹子'];
+Def.RealValues = [0, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+Def.CardString = ' A23456789TJQKA';
+module.exports = Def;
